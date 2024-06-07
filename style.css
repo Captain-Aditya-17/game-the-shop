@@ -127,7 +127,7 @@ video {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.76);
+    background: rgba(0, 0, 0, 0.815);
     display: flex;
     flex-direction: column;
     background-image: url(https://wallpapergod.com/images/hd/4k-gaming-5120X2880-wallpaper-gfb3158gbj2x3nmb.jpeg);
@@ -258,7 +258,6 @@ video {
     justify-content: center;
     text-transform: uppercase;
     overflow: hidden;
-    border-top: 2px solid white;
 }
 
 .page-2 h1 {
@@ -614,8 +613,41 @@ video {
 
 
 .page-7 {
+    position: relative;
     width: calc(100%- 1vw);
     padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.two-side {
+    position: relative;
+    display: flex;
+    gap: 3rem;
+    padding: .5vw 1vw;
+    background-color: white;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+.two-side h1 {
+    mix-blend-mode: difference;
+    color: white;
+    font-family: font-3;
+    cursor: pointer;
+}
+
+.side {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* right: 0; */
+    border-radius: 5px;
+    width: 50%;
+    height: 90%;
+    background-color: black;
 }
 
 .card-container {
@@ -691,6 +723,17 @@ video {
     scale: 1.03;
 }
 
+.side-con {
+    position: absolute;
+    bottom: 10px;
+    left: 100%;
+    z-index: 10;
+    width: 100%;
+    height: 91%;
+    background-image: url(https://wallpapers.com/images/featured/4k-ultra-hd-gaming-ylyipyznm00tq5og.jpg);
+    background-size: cover;
+}
+
 .page-8 {
     width: calc(100%-1vw);
     height: calc(100vh - 1vw);
@@ -736,16 +779,40 @@ video {
     width: 80%;
     height: 100%;
     border-radius: 10px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     border-radius: 10px;
     gap: 10px;
 }
-.right-elem{
+
+.right-elem {
     width: 100%;
     border-radius: 10px;
     height: calc(100% / 3);
     background-color: #cdcefc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-elem h1 {
+    font-family: font-3;
+    font-size: 2vw;
+    text-align: center;
+    margin: 1rem;
+}
+
+.elem-img {
+    width: 20%;
+    height: calc(100%-.5rem);
+    border-radius: 10px;
+    margin: .5rem;
+    overflow: hidden;
+}
+
+.elem-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .center-bottom {
@@ -765,30 +832,67 @@ video {
     gap: 10px;
     position: relative;
 }
-.cont{
+
+.icon {
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    right: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.icon i {
+    font-size: 1.5vw;
+}
+
+.cont {
     width: 65%;
     height: 100%;
     gap: 5px;
     overflow: hidden;
+    display: flex;
 }
-.bottom-card{
-    /* transform: translateX(13vw); */
-    min-width: 13vw;
+
+.bottom-card {
+    flex-shrink: 0;
+    width: 13vw;
     height: 100%;
     background-color: #cdcefc;
     border-radius: 5px;
     overflow: hidden;
+    cursor: pointer;
+    transition: all linear 0.2s;
 }
-.bottom-card img{
+
+.bottom-card:hover {
+    opacity: .5
+}
+
+.bottom-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 .bottom-right {
     width: 100%;
     height: 40%;
-    background-color: #111111;
+    background: linear-gradient(to left, transparent, #111111, #111111), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyQR3AnOmu-ZfXkjmLhZXUZA7CP8pbBzQ3wmCUPMfN74NQ-XIbr9Uk1K52x3W8x2eQ5qA&usqp=CAU);
+    background-size: cover;
+    background-position: center;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-right h1 {
+    font-size: 2vw;
+    font-family: font-2;
+    color: #ffff;
 }
 
 .right-pannel {
@@ -796,4 +900,144 @@ video {
     height: 100%;
     background-color: #111111;
     border-radius: 10px;
+}
+
+.page-9 {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    row-gap: 10px;
+}
+
+.goku {
+    position: relative;
+    width: 100%;
+    height: calc(100% / 4);
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.goku span {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    font-family: font-4;
+    font-size: 3vw;
+    z-index: 10;
+    transition: all ease 0.3s;
+}
+
+.goku::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transition: all ease 0.3s;
+    z-index: 9;
+}
+
+.goku:hover::after {
+    width: 100%;
+}
+
+.goku:hover span {
+    color: black;
+}
+
+.goku:hover img {
+    opacity: 1;
+    rotate: -20deg;
+}
+
+.goku img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 12;
+    opacity: 0;
+    width: 15%;
+    transition: all ease 0.3s;
+}
+
+.page-10 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+.background-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.background-text h1 {
+    font-size: 12vw;
+    font-family: font-2;
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.slazzer.com/downloads/b5866d18-24a1-11ef-a4db-42010a800009/image_prev_ui.png);
+    background-size: cover;
+}
+
+.page-11 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.album {
+    margin-top: 2rem;
+    padding: 1vw;
+    width: calc(100% - 2vw);
+    height: calc(100% - 2vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+}
+
+.row-img {
+    width: calc(100%/4);
+    border-radius: 5px;
+    height: 100%;
+    background-color: red;
+    overflow: hidden;
+}
+.row-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.page-12{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://wallpapercave.com/wp/wp5231505.jpg);
+    background-size: cover;
 }

@@ -370,4 +370,86 @@ ps5.forEach((dets) => {
     <img src=${dets.img5} alt="">
 </div>`
 })
-document.querySelector(".bottom-left").innerHTML = clutetr3
+document.querySelector(".cont").innerHTML = clutetr3
+let flag2 = 0
+document.querySelector('.icon').addEventListener('click', () => {
+    if (flag2 == 0) {
+        gsap.to('.bottom-card', {
+            x: -410
+        })
+        gsap.to('.icon', {
+            rotate: 180
+        })
+        flag2 = 1
+    } else {
+        gsap.to('.bottom-card', {
+            x: 0
+        })
+        gsap.to('.icon', {
+            rotate: 0
+        })
+        flag2 = 0
+    }
+})
+let tog = 0
+let twoSide = document.querySelectorAll('.two-side h1')
+twoSide.forEach((dets) => {
+    dets.addEventListener('click', () => {
+        if (tog == 0) {
+            gsap.to('.side', {
+                x: 150
+            })
+            gsap.to('.side-con', {
+                left: 0
+            })
+            tog = 1
+        }
+        else {
+            gsap.to('.side', {
+                x: 0
+            })
+            gsap.to('.side-con', {
+                left: '100%'
+            })
+            tog = 0
+        }
+    })
+})
+let tl10 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.page-10',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: 1,
+        // pin: ture
+    }
+})
+tl10.from('.background-image', {
+    // y: -400,
+    scale: 5,
+    opacity: 0,
+},'e')
+tl10.from('.background-text h1', {
+    y: 400,
+    stagger: .2
+},'e')
+gsap.to('.album',{
+    scrollTrigger: {
+        trigger: '.page-11',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+    },
+    rotate: 15,
+    scale: 2,
+    opacity: 0
+})
+gsap.to('.page-11',{
+    scrollTrigger: {
+        trigger: '.page-11',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+        pin: true
+    },
+})
