@@ -6,6 +6,13 @@ let audio = new Audio('gun-3.wav')
 window.addEventListener('click', () => {
     audio.play()
 })
+
+document.querySelector('.main').addEventListener('mousemove',(dets)=>{
+    gsap.to('.crsr',{
+        top: dets.y,
+        left: dets.x
+    })
+})
 let clutter = ''
 let arr = [
     {
@@ -341,6 +348,7 @@ arr2.forEach((dets) => {
 </div>`
 })
 document.querySelector(".card-container").innerHTML = clutetr2
+document.querySelector(".side-con").innerHTML = clutetr2
 
 let ps5 = [
     {
@@ -452,4 +460,11 @@ gsap.to('.page-11',{
         scrub: 1,
         pin: true
     },
+})
+let element = document.querySelector('.right-pannel i')
+element.addEventListener('click',()=>{
+    element.style.animation = 'none'; // Reset the animation
+    // Trigger reflow to restart the animation
+    element.offsetHeight; // This forces the reflow
+    element.style.animation = 'user ease 1s '
 })
